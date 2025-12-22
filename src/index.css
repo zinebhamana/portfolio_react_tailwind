@@ -154,23 +154,114 @@ body {
   }
 }
 
+@layer utilities {
+  /* light mode */
+  .border-theme {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #F97316;
+    transition: all 0.3s ease;
+  }
+
+  .border-theme:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.5); /* orange glow */
+  }
+
+  /* dark mode */
+  .dark .border-theme {
+    border-color: #8A2BE2;
+  }
+
+  .dark .border-theme:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.5); /* purple glow */
+  }
+}
+
+@layer utilities {
+  .progress-bar {
+    @apply h-2 rounded-full origin-left transition-all; /* common styles */
+    background-color: #F97316; /* light mode orange */
+    transform-origin: left;    /* scale from left */
+  }
+
+  .progress-bar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.5); /* glow in light */
+  }
+
+  /* dark mode */
+  .dark .progress-bar {
+    background-color: #8A2BE2; /* dark mode purple */
+  }
+
+  .dark .progress-bar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5); /* glow in dark */
+  }
+}
+
+
+
 
 @utility card-hover{
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
  
 }
-@utility gradient-border{
-  @apply relative rounded-md;
-  background: linear-gradient(to right , hsl(var(--card)) , hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  
-}
-@utility cosmic-button{
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+@utility gradient-border {
+  @apply relative rounded-md p-1
          transition-all duration-300
-         hover:shadow-glow hover:scale-105 active:scale-95;
+         overflow-visible
+          hover:scale-105 hover:shadow-glow
+         active:scale-95;
+         dark:hover:shadow-glow;
+
+  /* light mode gradient */
+  background: linear-gradient(to right, #F97316, #FF9500);
+
+  /* dark mode gradient */
+  .dark & {
+    background: linear-gradient(to right, #4B0082, #8A2BE2);
+  }
+
 }
+
+
+
+
+
+  
+@utility cosmic-button {
+  @apply px-6 py-2 rounded-full
+         bg-orange-600 text-white
+         font-medium
+         transition-all duration-300
+         hover:scale-105 hover:shadow-glow
+         active:scale-95;
+
+  .dark & {
+    background-color: #4B0082; /* purple-600 */
+  }
+}
+
+
+@utility circle-button {
+  @apply w-12 h-12 flex items-center justify-center  /* fixed size + center icon */
+         rounded-full
+         bg-orange-800 text-white
+         font-medium
+         transition-all duration-300
+         hover:scale-105 hover:shadow-glow
+         active:scale-95;
+
+  .dark & {
+    background-color: #4B0082; /* purple in dark mode */
+  }
+}
+
+
+
 
 
 @utility star {
@@ -226,6 +317,26 @@ body {
   }
 }
 
+@utility shadow-glow {
+  /* Light mode → orange glow */
+  box-shadow: 0 0 35px rgba(255, 165, 0, 0.6);
+
+  /* Dark mode → purple glow */
+  .dark & {
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.6); /* purple-600 */
+  }
+}
+
+
+@layer utilities {
+  .shadow-glow-light {
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.45); /* orange glow */
+  }
+
+  .shadow-glow-dark {
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.55); /* purple glow */
+  }
+}
 
 
 

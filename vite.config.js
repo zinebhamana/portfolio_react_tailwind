@@ -13,17 +13,3 @@ export default defineConfig({
   }
 });
 
-// tailwind.config.js
-module.exports = {
-  darkMode: 'class', // important for .dark toggle
-  theme: {
-    extend: {
-      backgroundColor: {
-        'background': 'var(--background)',
-      },
-      textColor: {
-        'foreground': 'var(--foreground)',
-      }
-    }
-  },
-}
