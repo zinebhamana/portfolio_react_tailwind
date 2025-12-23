@@ -37,7 +37,7 @@ export const StarBackground = () => {
 
   // Generate meteors
   const generateMeteors = () => {
-    const numberOfMeteors = 6;
+    const numberOfMeteors = 10;
     const newMeteors = [];
     for (let i = 0; i < numberOfMeteors; i++) {
       newMeteors.push({

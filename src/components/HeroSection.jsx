@@ -18,7 +18,7 @@ export const HeroSection = () => {
         <div className=" pt-5 opacity-0 animate-fade-in-delay-4">
  
             <div className="flex flex-col sm:flex-row gap-2 pt-4 justify-center">
-                        <a href="#contact"  target="_blank" className=" cosmic-button flex items-center justify-center text-center">
+                        <a href="/CV.pdf"  target="_blank" className=" cosmic-button flex items-center justify-center text-center">
                           {" "}
                           DownLoad CV {" "}{" "} <GoDownload />
                         </a>

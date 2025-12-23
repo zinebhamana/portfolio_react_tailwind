@@ -5,6 +5,9 @@ import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectsSection";
+import { Contact } from "../components/Contact";
+import { Footer } from "../components/Footer";
+import { StarCursor } from "../components/StarCursor";
 export const Home = () => {
   return (
     <div className="min-h-screen overflow-x-hidden relative">
@@ -13,7 +16,8 @@ export const Home = () => {
 
       {/* navbar */}
       <Navbar/>
-    
+    {/*cursor*/}
+    <StarCursor/>
     
       {/* theme toggle */}
       <ThemeToggle />
@@ -26,6 +30,7 @@ export const Home = () => {
         <AboutSection/>
         <SkillsSection/>
         <ProjectsSection/>
+        <Contact/>
         
         
   
@@ -34,6 +39,8 @@ export const Home = () => {
       
 
       {/* footer */}
+      <Footer/>
+    
     </div>
   );
 };

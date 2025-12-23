@@ -36,13 +36,13 @@ export const SkillsSection = () => {
           My <span className="text-glow"> Skills</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className=" flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "border px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "gradient-border bg-primary text-primary-foreground"
                   : "  bg-secondary/70 text-primary hover:bd-secondary"
@@ -62,9 +62,9 @@ export const SkillsSection = () => {
               <div className="text-left mb-4">
                 <h3 className="font-semibold text-lg"> {skill.name}</h3>
               </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
+              <div className="border w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
                 <div
-                  className="border progress-bar h-2 rounded-full origin-left animate-[grow_1.5s_ease-out] "
+                  className=" progress-bar h-2 rounded-full origin-left animate-[grow_1.5s_ease-out] "
                   style={{ width: skill.level + "%" }}
                 />
               </div>

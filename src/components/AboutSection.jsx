@@ -15,21 +15,11 @@ return ( <section id="about" className="py-24 px-4 relative">{" "}
 
     </h2>
     <div className=" items-center">
-        <div className="space-y-6">
+        <div className="space-y-3">
             <h3 className="text-2xl font-semibold">UI/UX Designer & Web Developer</h3>
             <p className="text-muted-foreground">
 
-                With over 3 years of experience in web development 
-                 and 2 years in UI/UX design, skilled in creating 
-                 responsive,
-                 user-friendly websites and interfaces.
-            </p>
-            <p className="text-muted-foreground">
-                I am passionate about creating responsive,
-                 user-friendly websites and engaging digital experiences
-                  that combine 
-                functionality with aesthetics
-
+               With over 3 years of experience in web development and 2 years in UI/UX design, I am skilled in creating responsive, user-friendly websites and interfaces that prioritize both functionality and aesthetics. I am passionate about designing engaging digital experiences that captivate users while maintaining seamless usability. By combining technical expertise with a keen eye for design, I strive to build websites and applications that not only look visually appealing but also deliver intuitive, enjoyable interactions for every user
             </p>
             <div className="flex  sm:flex-row gap-2 pt-4 justify-center">
               <a href="https://github.com/zinebhamana" target="_blank" className="circle-button">
@@ -64,7 +54,7 @@ return ( <section id="about" className="py-24 px-4 relative">{" "}
                         <div className="text-left">
                 
                             <p className="text muted-foreground text-center">
-                                Creating responsive websites and web applications
+                                Building modern, responsive websites that combine functionality with aesthetic appeal. Optimized for fast loading and seamless user experience.ns
 
                             </p>
                         </div>
@@ -78,7 +68,7 @@ return ( <section id="about" className="py-24 px-4 relative">{" "}
                         </div>
                         <div>
                             <p className="text muted-foreground text-center">
-                                Creating responsive websites and web applications
+                                Creating responsive mobile applications with smooth performance and intuitive interfaces. Focused on delivering apps that users love to engage with.
                             </p>
                         </div>
                          </div> 
@@ -91,7 +81,7 @@ return ( <section id="about" className="py-24 px-4 relative">{" "}
                         </div>
                         <div>
                             <p className="text muted-foreground text-center">
-                                I use Excel to organize, analyze, and visualize data efficiently, creating dynamic spreadsheets and charts.
+                                Designing efficient spreadsheets and dashboards for data analysis and reporting. Helping businesses make smarter decisions with clear insights.
                             </p>
                         </div>
 
@@ -105,7 +95,7 @@ return ( <section id="about" className="py-24 px-4 relative">{" "}
                         </div>
                         <div>
                             <p className="text muted-foreground text-center">
-                                I use Excel to organize, analyze, and visualize data efficiently, creating dynamic spreadsheets and charts.
+                               Crafting user-friendly interfaces and engaging experiences for web and mobile. Focused on usability, aesthetics, and smooth interaction flows.
                             </p>
                         </div>
                         </div> 

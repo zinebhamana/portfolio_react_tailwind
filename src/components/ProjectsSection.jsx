@@ -25,8 +25,8 @@ const projects = [
     title: "Weather App",
     description:
       "Full Weather Application  .",
-    image: "/projects/project3.png",
-    tags: ["XML", "Kotlin"],
+      image: "/projects/project.png",
+    tags: [ "Kotlin","Android Studio","In Progress"],
     demoUrl: "#",
     githubUrl: "#",
   },
