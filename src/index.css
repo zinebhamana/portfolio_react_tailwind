@@ -5,17 +5,13 @@
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   
-  --shadow-glow: 0 0 10px rgba(139, 92, 246, 0.5);
-
-
-
+  --shadow-glow: 0 0 10px rgba(124, 58, 237, 0.5); /* light purple */
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
   --color-card: hsl(var(--card));
  
-
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -24,64 +20,17 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 1s linear infinite;
-
-
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+/* Keyframes unchanged */
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+@keyframes pulse-subtle { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+@keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes meteor { 0% { transform: translate(0, 0) rotate(45deg); opacity: 1; } 100% { transform: translate(500px, 500px) rotate(45deg); opacity: 0; } }
 
-@keyframes pulse-subtle {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@keyframes meteor {
-  0% {
-    transform: translate(0, 0) rotate(45deg);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(500px, 500px) rotate(45deg);
-    opacity: 0;
-  }
-}
-
-
-
-
-@layer base{
+@layer base {
 :root {
-  --background: hsl(210, 40%, 98%); /* almost white */
+  --background: hsl(210, 40%, 98%);
   --foreground: hsl(222, 47%, 11%);
   --card: hsl(0, 0%, 100%);
   --primary: hsl(250, 47%, 60%);
@@ -90,23 +39,18 @@
 }
 
 .dark {
-  --background: hsl(222, 47%, 4%); /* dark */
+  --background: hsl(222, 47%, 4%);
   --foreground: hsl(213, 31%, 91%);
   --card: hsl(222, 47%, 8%);
   --primary: hsl(250, 65%, 65%);
   --primary-foreground: hsl(213, 31%, 91%);
   --border: hsl(217, 33%, 20%);
 }
-
 }
-* {
-  @apply border-border;
 
-}
-html{
-  @apply scroll-smooth;
+* { @apply border-border; }
+html { @apply scroll-smooth; }
 
-}
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -114,180 +58,113 @@ body {
   font-feature-settings: "rlig"1,"calt"1;
 }
 
-
-
-
-
-
-@utility container{
+@utility container {
   margin-inline: auto;
   padding-inline: 2rem;
-
-  @media (width >= 640px){
-    max-width: 640px;
-  }
-  @media (width >=768px){
-    max-width: 768px;
-  }
-  @media (width >=1024px){
-  max-width: 1024px;
-  }
-  @media (width 1280px){
-    max-width: 1280px;
-  }
-  @media(width>=1400px){
-    max-width: 1400px;
-  }
+  @media (width >= 640px){ max-width: 640px; }
+  @media (width >=768px){ max-width: 768px; }
+  @media (width >=1024px){ max-width: 1024px; }
+  @media (width 1280px){ max-width: 1280px; }
+  @media(width>=1400px){ max-width: 1400px; }
 }
 
+/* Text glow updated to purple, stars unchanged */
 @utility text-glow {
   @apply relative;
+  @apply text-purple-700;
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.7);
 
-  /* Light mode: orange text + glow */
-  @apply text-orange-800;
-  text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
-
-  /* Dark mode: deep purple text + glow */
   .dark & {
-    color: #4B0082; /* deep purple */
+    color: #4B0082;
     text-shadow: 0 0 10px rgba(75, 0, 130, 0.7);
   }
 }
 
 @layer utilities {
-  /* light mode */
+  /* Border theme purple */
   .border-theme {
     border-width: 1px;
     border-style: solid;
-    border-color: #F97316;
+    border-color: #7C3AED;
     transition: all 0.3s ease;
   }
 
   .border-theme:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(249, 115, 22, 2); /* orange glow */
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.7);
   }
 
-  /* dark mode */
   .dark .border-theme {
     border-color: #8A2BE2;
   }
 
   .dark .border-theme:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(138, 43, 226, 2); /* purple glow */
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.7);
   }
-}
 
-@layer utilities {
+  /* Progress bar */
   .progress-bar {
-    @apply h-2 rounded-full origin-left transition-all; /* common styles */
-    background-color: #F97316; /* light mode orange */
-    transform-origin: left;    /* scale from left */
+    @apply h-2 rounded-full origin-left transition-all;
+    background-color: #7C3AED;
+    transform-origin: left;
   }
 
-
-  /* dark mode */
-  .dark .progress-bar {
-    background-color: #8A2BE2; /* dark mode purple */
-  }
-
-
+  .dark .progress-bar { background-color: #8A2BE2; }
 }
 
+@utility card-hover { @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg; }
 
-
-
-@utility card-hover{
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
- 
-}
 @utility gradient-border {
-  @apply relative rounded-md p-1
-         transition-all duration-300
-         overflow-visible
-          hover:scale-105 hover:shadow-glow
-         active:scale-95;
-         dark:hover:shadow-glow;
+  @apply relative rounded-md p-1 transition-all duration-300 overflow-visible hover:scale-105 hover:shadow-glow active:scale-95;
+  dark:hover:shadow-glow;
 
-  /* light mode gradient */
-  background: linear-gradient(to right, #F97316, #FF9500);
-
-  /* dark mode gradient */
+  background: linear-gradient(to right, #7C3AED, #9D4EDD); /* light purple gradient */
   .dark & {
     background: linear-gradient(to right, #4B0082, #8A2BE2);
   }
-
 }
 
-
-
-
-
-  
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full
-         bg-orange-700 text-white
-         font-medium
-         transition-all duration-300
-         hover:scale-105 hover:shadow-glow
-         active:scale-95;
-
-  .dark & {
-    background-color: #4B0082; /* purple-600 */
-  }
+  @apply px-6 py-2 rounded-full bg-purple-700 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow active:scale-95;
+  .dark & { background-color: #4B0082; }
 }
+
 @layer utilities {
+  /* Stars untouched */
   .star-glow {
     @apply w-5 h-5 absolute pointer-events-none;
-    background-color: #3b82f6; /* default blue for light mode */
+    background-color: #3b82f6;
   }
 
-  .dark .star-glow {
-    background-color: #ffffff; /* white for dark mode */
-  }
+  .dark .star-glow { background-color: #ffffff; }
 }
-
 
 @utility circle-button {
-  @apply w-12 h-12 flex items-center justify-center  /* fixed size + center icon */
-         rounded-full
-         bg-orange-700 text-white
-         font-medium
-         transition-all duration-300
-         hover:scale-105 hover:shadow-glow
-         active:scale-95;
-
-  .dark & {
-    background-color: #4B0082; /* purple in dark mode */
-  }
+  @apply w-12 h-12 flex items-center justify-center rounded-full bg-purple-700 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-glow active:scale-95;
+  .dark & { background-color: #4B0082; }
 }
 
-
-
-
-
+/* Stars unchanged */
 @utility star {
-  @apply absolute rounded-full bg-blue-900; /* light mode = blue stars */
-  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.5); /* blue glow */
-
-  /* dark mode overrides */
+  @apply absolute rounded-full bg-blue-900;
+  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.5);
   .dark & {
     @apply bg-white;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5); /* white glow */
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
   }
 }
 
+/* Meteor purple */
 @utility meteor {
-  @apply absolute bg-linear-to-r from-orange-900 via-orange-500 to-transparent rounded-full; /* light mode = purple */
- box-shadow: 0 0 10px 5px rgba(255, 165, 0, 0.35);
+  @apply absolute bg-linear-to-r from-purple-900 via-purple-500 to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px rgba(124, 58, 237, 0.35);
   transform: rotate(45deg);
   animation: meteor 1.5s linear infinite;
   animation-delay: -0.4s;
   animation-fill-mode: both;
   will-change: transform;
 
-  /* dark mode = orange meteors */
   .dark & {
     @apply bg-linear-to-r from-purple-900 via-purple-400 to-transparent;
     box-shadow: 0 0 10px 5px rgba(139, 92, 246, 0.35);
@@ -296,62 +173,27 @@ body {
 
 @utility nav-link {
   @apply transition-colors duration-300 cursor-pointer px-2 py-1 rounded-md text-foreground/80 relative;
-
-  
-  /* Light mode default text */
-  color: hsl(var(--foreground)); /* black text in light mode */
+  color: hsl(var(--foreground));
 }
 @utility background{
-  @apply bg-gray-50; 
-  .dark &{
-    @apply bg-black;
-  }
+  @apply bg-gray-50;
+  .dark & { @apply bg-black; }
 }
 
 @layer utilities {
-  /* Light mode hover = ORANGE */
-  .nav-link:hover {
-    color: #7F3106; /* orange-600 */
-  }
-
-  /* Dark mode default text = WHITE */
-  .dark .nav-link {
-    color: hsl(var(--foreground)); /* white in dark mode */
-  }
-
-  /* Dark mode hover = PURPLE */
-  .dark .nav-link:hover {
-    color: rgb(88 28 135); /* purple-900 */
-  }
+  .nav-link:hover { color: #7C3AED; } /* purple hover */
+  .dark .nav-link { color: hsl(var(--foreground)); }
+  .dark .nav-link:hover { color: rgb(88 28 135); }
 }
 
 @utility shadow-glow {
-  /* Light mode → orange glow */
-  box-shadow: 0 0 35px rgba(255, 165, 0, 0.6);
-
-  /* Dark mode → purple glow */
-  .dark & {
-    box-shadow: 0 0 35px rgba(124, 58, 237, 0.6); /* purple-600 */
-  }
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.6);
+  .dark & { box-shadow: 0 0 35px rgba(124, 58, 237, 0.6); }
 }
-
 
 @layer utilities {
-  .shadow-glow-light {
-    box-shadow: 0 0 25px rgba(249, 115, 22, 0.45); /* orange glow */
-  }
-
-  .shadow-glow-dark {
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.55); /* purple glow */
-  }
+  .shadow-glow-light { box-shadow: 0 0 25px rgba(124, 58, 237, 0.45); }
+  .shadow-glow-dark { box-shadow: 0 0 30px rgba(138, 43, 226, 0.55); }
 }
 
-
-
-#root{
-  max-width:100%;
-  margin:0 auto;
-  padding: 0;
-  text-align: center;
-}
-
+#root { max-width:100%; margin:0 auto; padding:0; text-align:center; }

@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import { AiTwotoneHeart } from "react-icons/ai";
 import { ThemeToggle } from "./ThemeToggle";
 
 export const Footer = () => {
@@ -11,11 +12,10 @@ export const Footer = () => {
       >
         <ArrowUp size={20} />
       </a>
-      <p className="font-bold text-sm text-muted-foreground">
+      <p className="  font-bold text-sm text-muted-foreground mr-40">
         {" "}
-       <span>
-    Created with <span className="text-glow">❤️</span> by me
-  </span>
+       <span className="flex items-center gap-1" >
+    Created with <AiTwotoneHeart /> by me . </span>
       </p>
     </footer>
   );

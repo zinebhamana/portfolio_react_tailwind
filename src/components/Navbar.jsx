@@ -28,7 +28,7 @@ export const Navbar = () => {
         className={cn(
           "fixed w-full z-50 transition-all duration-300 backdrop-blur-md",
           isScrolled
-            ? "py-3 bg-background/80 shadow-md"
+            ? "py-5 bg-background/80 shadow-md"
             : "py-5 bg-transparent"
         )}
       >
@@ -38,26 +38,27 @@ export const Navbar = () => {
             className="text-xl font-bold text-primary flex items-center"
             href="#hero"
           >
-            <span className="relative z-10 ml-20">
+            <span className="relative z-10 whitespace-nowrap ">
               <span className="text-glow"> HAMANA </span> Zineb
             </span>
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex space-x-8 mr-100">
+          <div className="hidden lg:flex space-x-8 mr-40">
             {navItems.map((item, key) => (
               <a key={key} href={item.href} className="nav-link">
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="flex items-center space-x-2 md:hidden">
-  {/* Theme Toggle */}
+
+          <div className="flex items-center space-x-2 lg:flex">
+            
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="fixed top-4 right-5 md:hidden p-2 text-foreground z-50"
+            className="fixed top-4 right-5 lg:hidden p-2 text-foreground z-50"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

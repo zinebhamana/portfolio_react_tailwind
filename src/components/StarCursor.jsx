@@ -11,12 +11,10 @@ export const StarCursor = () => {
       const dx = Math.cos(angle) * distance;
       const dy = Math.sin(angle) * distance;
 
-      const color = "star-glow";
-
       const id = Date.now() + Math.random(); // unique id
       setStars((prev) => [
         ...prev,
-        { x: e.clientX, y: e.clientY, dx, dy, color, id },
+        { x: e.clientX, y: e.clientY, dx, dy, id },
       ]);
 
       // remove star after 2s
@@ -36,11 +34,10 @@ export const StarCursor = () => {
         {stars.map((star) => (
           <div
             key={star.id}
-            className="star absolute w-4 h-4"
+            className="absolute star w-4 h-4"
             style={{
               left: star.x,
               top: star.y,
-              backgroundColor: star.color,
               clipPath:
                 "polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)",
               animation: "fadeOut 2s forwards",
@@ -52,18 +49,25 @@ export const StarCursor = () => {
       </div>
 
       <style>{`
-       
+        /* Default light mode color (purple) */
+        .star {
+          background-color: #7E22CE;
+          pointer-events: none;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Dark mode color (white) */
+        @media (prefers-color-scheme: dark) {
+          .star {
+            background-color: #FFFFFF;
+          }
+        }
 
         @keyframes fadeOut {
           to {
             transform: translate(var(--dx), var(--dy)) scale(0.5);
             opacity: 0;
           }
-        }
-
-        .star {
-          pointer-events: none;
-          transform: translate(-50%, -50%) scale(1);
         }
       `}</style>
     </>
