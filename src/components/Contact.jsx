@@ -4,7 +4,7 @@ export const Contact = () => {
   const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // ⛔ empêche la redirection
+    e.preventDefault(); 
 
     const form = e.target;
     const data = new FormData(form);
@@ -28,16 +28,16 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center bg-background px-6"
+      className="container mx-auto max-w-7xl px-4 md:px-8 mt-20 mb-10 mr-10"
     >
-      <div className="w-full max-w-xl text-center">
-        <h1 className="text-4xl font-bold mb-10">
+      <div className="w-full max-w-xl text-center mt-1">
+        <h1 className="text-4xl font-bold mb-6">
           <span className="text-glow">Contact</span>{" "}
           <span className="text-primary">Me</span>
         </h1>
 
-        <div className="border-theme rounded-lg py-12 px-6">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="border-theme rounded-lg py-12 px-6 ">
+          <form onSubmit={handleSubmit} className="space-y-4">
            <input
   type="text"
   name="name"
@@ -101,7 +101,7 @@ export const Contact = () => {
             </button>
 
             {status && (
-              <p className="text-sm text-green-500 mt-4">{status}</p>
+              <p className="text-sm text-green-500 mt-2">{status}</p>
             )}
           </form>
         </div>

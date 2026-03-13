@@ -17,6 +17,12 @@ import adobeLogo from "../assets/adobe.svg";
 import  CLogo from "../assets/C.svg";
 import sqlLogo from "../assets/sql.svg";
 import liteLogo from "../assets/SQLITE.svg";
+import elecLogo from "../assets/elec.svg";
+import fireLogo from "../assets/firebase.svg";
+import supLogo from "../assets/sup.svg";
+import xmlLogo from "../assets/xml.svg";
+import nodeLogo from "../assets/nodejs.svg";
+import phpLogo from "../assets/php.svg";
 
 
 
@@ -27,7 +33,9 @@ const skills = [
   { images: [htmlLogo, cssLogo], name: "HTML/CSS", level: 95, category: "frontend" },
   { image: jsLogo , name: "JavaScript", level: 70, category: "frontend" },
   { image: reactLogo ,name: "React", level: 50, category: "frontend" },
-  { image: tailwindLogo , name: "Tailwind CSS", level: 50, category: "frontend" },
+  { image: tailwindLogo , name: "TailwindCSS", level: 50, category: "frontend" },
+  { image: xmlLogo , name: "XML", level: 50, category: "frontend" },
+  { image: phpLogo , name: "PHP", level: 50, category: "frontend" },
 
   // Backend
   { image: pythonLogo , name: "Python", level: 60, category: "backend" },
@@ -37,6 +45,10 @@ const skills = [
   { image: CLogo , name: "C", level: 70, category: "backend" },
   { image: sqlLogo , name: "MySql", level: 65, category: "backend" },
   { image: liteLogo , name: "SQLite", level: 65, category: "backend" },
+  { image: elecLogo , name: "ElectronJS", level: 50, category: "backend" },
+  { image: fireLogo , name: "Firebase", level: 50, category: "backend" },
+   { image: supLogo , name: "Supabase", level: 50, category: "backend" },
+  { image: nodeLogo , name: "NodeJS", level: 50, category: "backend" },
 
   // Tools
   {  images: [gitLogo, githubLogo], name: "Git/GitHub", level: 60, category: "tools" },
@@ -84,7 +96,7 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="border-theme rounded-md p-6 bg-card shadow-xs card-hover"
+              className="border-theme rounded-md p-2 bg-card shadow-xs card-hover"
             >
               {/* Skill name + optional icon */}
              <div className="flex items-center mb-4 space-x-2">

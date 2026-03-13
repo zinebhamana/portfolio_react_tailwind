@@ -4,7 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export const Footer = () => {
   return (
-    <footer className="py-4 px-4 bg-card relative border-t border-border mt-20 pt-2 flex flex-wrap justify-between items-center">
+    <footer className="py-4 px-4 bg-card relative border-t border-border mt-1 pt-2 flex flex-wrap justify-between items-center">
       {" "}
       <a
         href="#hero"
@@ -12,7 +12,7 @@ export const Footer = () => {
       >
         <ArrowUp size={20} />
       </a>
-      <p className="  font-bold text-sm text-muted-foreground mr-40">
+      <p className="  font-bold text-sm text-muted-foreground ">
         {" "}
        <span className="flex items-center gap-1" >
     Created with <AiTwotoneHeart /> by me . </span>

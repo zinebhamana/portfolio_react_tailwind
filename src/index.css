@@ -146,15 +146,15 @@ body {
 }
 
 /* Stars unchanged */
-@utility star {
-  @apply absolute rounded-full bg-blue-900;
-  box-shadow: 0 0 10px 2px rgba(59, 130, 246, 0.5);
-  .dark & {
-    @apply bg-white;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
-  }
+.star {
+  @apply absolute rounded-full bg-purple-500;
+  box-shadow: 0 0 15px 4px rgba(69, 0, 134, 0.5);
 }
 
+.dark .star {
+  background-color: white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6);
+}
 /* Meteor purple */
 @utility meteor {
   @apply absolute bg-linear-to-r from-purple-900 via-purple-500 to-transparent rounded-full;
@@ -195,5 +195,6 @@ body {
   .shadow-glow-light { box-shadow: 0 0 25px rgba(124, 58, 237, 0.45); }
   .shadow-glow-dark { box-shadow: 0 0 30px rgba(138, 43, 226, 0.55); }
 }
+
 
 #root { max-width:100%; margin:0 auto; padding:0; text-align:center; }

@@ -1,4 +1,4 @@
-import { FaBehance, FaFileExcel, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaBehance, FaFileExcel, FaGithub, FaLinkedin, FaWhatsapp , FaInstagram } from "react-icons/fa";
 import { Code } from "lucide-react";
 import { FaMobileScreen } from "react-icons/fa6";
 import { BsAndroid2 } from "react-icons/bs";
@@ -39,19 +39,22 @@ export const AboutSection = () => {
               <a href="https://api.whatsapp.com/send/?phone=213779725345&text&type=phone_number&app_absent=0" target="_blank" className="circle-button">
                 <FaWhatsapp className="w-6 h-6" />
               </a>
+              <a href="https://api.whatsapp.com/send/?phone=213779725345&text&type=phone_number&app_absent=0" target="_blank" className="circle-button">
+                <FaInstagram className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Services Section */}
-      <div className="container mx-auto max-w-7xl px-4 md:px-8 mt-32">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          <span className="text-glow">Services</span>
-        </h2>
+      <div id="services" className="container mx-auto max-w-7xl px-4 md:px-8 mt-32">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+    <span className="text-glow">Services</span>
+  </h2>
 
-        {/* Services Grid - All boxes exactly the same size */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Services Grid - All boxes exactly the same size */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Web Development */}
           <div className="border-theme gradient-border p-6 card-hover flex flex-col h-[280px]">
             <div className="flex items-center gap-4 flex-shrink-0">

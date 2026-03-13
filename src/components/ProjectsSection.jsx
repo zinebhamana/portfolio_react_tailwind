@@ -41,7 +41,7 @@ const projects = [
     description: "Android application for children .",
     image: "/projects/project.png",
     tags: ["React", "tailwind", "In Progress"],
-    category: "desktop app ",
+    category: "desktop app",
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -134,7 +134,7 @@ export const ProjectsSection = () => {
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300 "
                   >
                     <ExternalLink size={20} />
                   </a>
